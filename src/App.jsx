@@ -22,6 +22,26 @@ function App() {
 		}
 	}, []);
 
+
+	useEffect(() => {
+		const targetNode = document.getElementById('bug');
+		const config = { attributes: true, childList: true, subtree: true };
+	  
+		const callback = function(mutationsList, observer) {
+		  for(const mutation of mutationsList) {
+			if (mutation.type === 'childList' && mutation?.target?.id==='bug') {
+				debugger
+			  console.log('A child node has been added or removed.');
+			}
+		  }
+		};
+	  
+		const observer = new MutationObserver(callback);
+		observer.observe(targetNode, config);
+	  
+		return () => observer.disconnect();
+	  }, []);
+
   return (
     <div >
 		<div>{state} val</div>
@@ -33,6 +53,9 @@ function App() {
 }
 
 export default App
+
+
+
 
 
 setTimeout(()=>{
