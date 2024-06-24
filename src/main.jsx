@@ -9,6 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
+window.name='Hellopupeteer'
 
 // const okDiv = document.getElementById('ok');
 // const newElement = document.createElement('div');
