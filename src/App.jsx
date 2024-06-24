@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 function App() {
 	const [state, stateFunction] = useState(0);
 	useEffect(() => {
-		debugger;
+	
 		const interval = setInterval(() => {
 			stateFunction(e=>e+1);
 		}, 500)
