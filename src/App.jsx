@@ -31,7 +31,7 @@ function App() {
 		const callback = function(mutationsList, observer) {
 		  for(const mutation of mutationsList) {
 			if (mutation.type === 'childList' && mutation?.target?.id==='bug') {
-				debugger
+				
 			  console.log('A child node has been added or removed.');
 			}
 		  }
